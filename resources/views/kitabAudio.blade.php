@@ -7,36 +7,34 @@
 @section('main')
     <main>
         <section class="d-flex flex-row justify-content-evenly m-4 my-auto">
-            <div class="card" style="width: 18rem;">
-                <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-                    class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-                    class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-                    class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="mb-3 text-black-50">Kitab Audio</h2>
+                    </div>
+                    @foreach ($products as $produk)
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card my-3">
+                                <div class="card-thumbnail" style="max-height: 250px; overflow: hidden;">
+                                    <img src="{{ $produk->img }}" style="hover{}" class="img-thumbnail img-fluid"
+                                        alt=" {{ $produk['nama_produk'] }} ">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $produk->nama_produk }}</h5>
+                                    <p class="card-text">{{ $produk->exerpt }}</p>
+                                    <button class="learn-more">
+                                        <span class="circle" aria-hidden="true">
+                                            <span class="icon arrow"></span>
+                                        </span>
+                                        <span class="button-text">Lebih Detail</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </section>
     </main>
 @endsection
+{{-- {!!  !!} for escape character (tag html di eksekusi) --}}

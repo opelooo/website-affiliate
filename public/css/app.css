@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Mukta:700");
-
+@import url(https://fonts.googleapis.com/css?family=Mukta:700);
 button {
 	box-sizing: border-box;
 }
@@ -95,3 +94,4 @@ button:hover .circle .icon.arrow {
 button:hover .button-text {
 	color: #fff;
 }
+

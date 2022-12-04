@@ -1,7 +1,11 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BaseController;
+use App\Http\Controllers\ProductsDetailController;
+use App\Models\BasePage;
 use PhpParser\Node\Expr\Assign;
+use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,31 +18,11 @@ use PhpParser\Node\Expr\Assign;
 |
 */
 
-Route::get('/', function () {
-    return view('main', [
-        'name' => 'Fernanda Gunsan',
-        'title' => 'Home'
-    ]);
-});
+Route::get('/', [BaseController::class, 'index']);
 
-Route::get('/kitabAudio', function () {
-    return view('kitabAudio', [
-        'name' => 'Fernanda Gunsan',
-        'title' => 'Kitab Audio'
-    ]);
-});
+Route::get('/kitabAudio', [ProductsDetailController::class, 'index']);
 
-Route::get('/kitabKeyboard', function () {
-    return view('kitabKeyboard', [
-        'name' => 'Fernanda Gunsan',
-        'title' => 'Kitab Keyboard'
-    ]);
-});
+Route::get('/kitabKeyboard', [BaseController::class, 'keyboard']);
 
-Route::get('/login', function () {
-    return view('login', [
-        'name' => 'Fernanda Gunsan',
-        'title' => "Gunsan's Only Page"
-    ]);
-});
+Route::get('/login', [BaseController::class, 'login']);
 

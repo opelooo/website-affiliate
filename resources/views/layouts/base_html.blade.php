@@ -12,7 +12,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <!-- link -->
-    <link rel="icon" type="image/x-icon" href="/public/img/book.png">
+    <link rel="icon" type="image/x-icon" href="{{ asset('img/book.png') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 
 <body>
@@ -21,7 +22,7 @@
 
         @include('partials.navbar')
     </header>
-        @yield('main')
+    @yield('main')
     <footer>
         <!-- place footer here -->
     </footer>
