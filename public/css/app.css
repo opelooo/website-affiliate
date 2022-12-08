@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Mukta:700");
 
+html {
+    scroll-behavior: smooth;
+}
+
 button {
     box-sizing: border-box;
 }
@@ -104,11 +108,11 @@ button:hover .button-text {
     align-items: center;
 }
 
-ul li {
+ul.footer-ul li.footer-list {
     list-style: none;
 }
 
-ul li a {
+ul.footer-ul li.footer-list a {
     width: 80px;
     height: 80px;
     background-color: #fff;
@@ -124,19 +128,19 @@ ul li a {
     z-index: 1;
 }
 
-ul li a .icon {
+ul.footer-ul li.footer-list a .icon {
     position: relative;
     color: #262626;
     transition: 0.5s;
     z-index: 3;
 }
 
-ul li a:hover .icon {
+ul.footer-ul li.footer-list a:hover .icon {
     color: #fff;
     transform: rotateY(360deg);
 }
 
-ul li a:before {
+ul.footer-ul li.footer-list a:before {
     content: "";
     position: absolute;
     top: 100%;
@@ -148,31 +152,34 @@ ul li a:before {
     z-index: 2;
 }
 
-ul li a:hover:before {
+ul.footer-ul li.footer-list a:hover:before {
     top: 0;
 }
 
-ul li:nth-child(1) a:before {
+ul.footer-ul li.footer-list:nth-child(1) a:before {
     background: #FF0000;
 }
 
-ul li:nth-child(2) a:before {
+ul.footer-ul li.footer-list:nth-child(2) a:before {
     background: #3b5999;
 }
 
-ul li:nth-child(3) a:before {
+ul.footer-ul li.footer-list:nth-child(3) a:before {
     background: #0077b5;
 }
 
-ul li:nth-child(4) a:before {
-    background: #dd4b39;
+ul.footer-ul li.footer-list:nth-child(4) a:before {
+    background: #f09433;
+    background: -moz-linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    background: -webkit-linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    background: linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
 }
 
-@media only screen and (max-width: 1280px) {
+/* @media only screen and (max-width: 1280px) {
     .hidden-responsive {
         display: none;
     }
-}
+} */
 
 body {
     margin: 0;
@@ -191,4 +198,14 @@ body {
 
 footer {
     grid-area: footer;
+}
+
+div.card-thumbnail img:hover {
+    transform: scale(1.15);
+    transition: 0.75s;
+}
+
+div.card-thumbnail img {
+    transform: scale(1);
+    transition: 0.75s;
 }

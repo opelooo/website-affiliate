@@ -18,7 +18,7 @@ class ProductsDetailController extends Controller
         return view('kitabAudio', [
             "title" => "Kitab Audio",
             "name" => "Fernanda Gunsan",
-            "exerpt" => "Fernanda Gunsan",
+            "slug" => "kitab-audio",
             "products" => Products_detail::all()
         ]);
     }
@@ -41,7 +41,50 @@ class ProductsDetailController extends Controller
      */
     public function store(StoreProducts_detailRequest $request)
     {
-        
+        // protected $fillable = [
+        //     'nama_produk',
+        //     'value',
+        //     'sound_quality',
+        //     'link',
+        //     'harga',
+        //     'exerpt',
+        //     'review',
+        //     'tipe_buds',
+        //     'bluetooth_codec',
+        //     'battery',
+        //     'sound_tuning',
+        //     'img'
+        // ];
+
+        $request->validate([
+            'nama_produk' => 'required',
+            'value' => 'required',
+            'sound_quality' => 'required',
+            'link' => 'required',
+            'harga' => 'required',
+            'exerpt' => 'required',
+            'review' => 'required',
+            'tipe_buds' => 'required',
+            'bluetooth_codec' => 'required',
+            'battery' => 'required',
+            'sound_tuning' => 'required',
+            'img' => 'required'
+        ]);
+
+        $create = new Products_detail();
+        $create->nama_produk =  $request->get('nama_produk');
+        $create->value = $request->get('value');
+        $create->sound_quality = $request->get('sound_quality');
+        $create->link = $request->get('link');
+        $create->harga = $request->get('harga');
+        $create->exerpt = $request->get('exerpt');
+        $create->review = $request->get('review');
+        $create->tipe_buds = $request->get('tipe_buds');
+        $create->bluetooth_codec = $request->get('bluetooth_codec');
+        $create->battery = $request->get('battery');
+        $create->sound_tuning = $request->get('harga');
+        $create->img = $request->get('img');
+        $create->save();
     }
 
     /**
@@ -87,5 +130,9 @@ class ProductsDetailController extends Controller
     public function destroy(Products_detail $products_detail)
     {
         //
+    }
+
+    public function getByitemID($itemID) {
+        return Products_detail::find($itemID);
     }
 }
