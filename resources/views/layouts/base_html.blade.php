@@ -21,8 +21,10 @@
 <body>
     <header>
         <!-- place navbar here -->
-
-        @include('partials.navbar')
+        @if ($slug != 'login')
+            @include('partials.navbar')
+        @else
+        @endif
     </header>
     @yield('main')
     @if ($slug != 'login')
@@ -42,32 +44,7 @@
     </script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
     {{-- javascript --}}
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $(document).on('click', '#learMore', function() {
-                var valueModal = $(this).data('value')
-                var soundQModal = $(this).data('sound')
-                var hargaModal = $(this).data('harga')
-                var budsModal = $(this).data('buds')
-                var codecModal = $(this).data('codec')
-                var bateraiModal = $(this).data('battery')
-                var tuningModal = $(this).data('tuning')
-                var review = $(this).data('review')
-                var linkBeli = $(this).data('link')
-
-                $('#review').text(review)
-                $('#valueModal').text(valueModal)
-                $('#soundQModal').text(soundQModal)
-                $('#hargaModal').text(hargaModal)
-                $('#budsModal').text(budsModal)
-                $('#codecModal').text(codecModal)
-                $('#bateraiModal').text(bateraiModal)
-                $('#tuningModal').text(tuningModal)
-                $("#linkBeli").attr('href', linkBeli);
-            });
-        });
-        // console.log("Settings page was loaded");
-    </script>
+    @yield('scripts')
 </body>
 
 </html>

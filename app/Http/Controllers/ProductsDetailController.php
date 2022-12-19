@@ -15,14 +15,83 @@ class ProductsDetailController extends Controller
      */
     public function index()
     {
-        return view('kitabAudio', [
-            "title" => "Kitab Audio",
-            "name" => "Fernanda Gunsan",
-            "slug" => "kitab-audio",
+        return view('rekomendasiAudio', [
+            "title" => "Rekomendasi Audio",
+            "name" => "Opelooo",
+            "slug" => "rekomen-audio",
             "products" => Products_detail::all()
         ]);
     }
+    private function productsView(String $title, String $slug){
+        return view('blogs.section-products', [
+            "title" => $title,
+            "name" => "Opelooo",
+            "slug" => $slug,
+            "products" => Products_detail::all()
+        ]);
+    }
+    public function tws(){
+        $title = "TWS";
+        $slug = "section-tws";
 
+        return $this->productsView($title, $slug);
+
+    }
+    public function headset(){
+        $title = "Headset";
+        $slug = "section-headset";
+
+        return $this->productsView($title, $slug);
+
+    }
+    public function headphone(){
+        $title = "Wreless Headphone";
+        $slug = "section-headphone";
+
+        return $this->productsView($title, $slug);
+    }
+    public function speaker(){
+        $title = "Speaker";
+        $slug = "section-speaker";
+
+        return $this->productsView($title, $slug);
+    }
+    public function soundcard(){
+        $title = "Sound Card";
+        $slug = "section-headset";
+
+        return $this->productsView($title, $slug);
+    }
+    public function kable(){
+        $title = "Kable";
+        $slug = "section-kable";
+
+        return $this->productsView($title, $slug);
+    }
+    public function iem(){
+        $title = "IEM";
+        $slug = "section-iem";
+
+        return $this->productsView($title, $slug);
+    }
+    public function dac(){
+        $title = "DAC";
+        $slug = "section-dac";
+
+        return $this->productsView($title, $slug);
+    }
+    public function mic(){
+        $title = "Mic";
+        $slug = "section-mic";
+
+        return $this->productsView($title, $slug);
+    }
+    public function eartips(){
+        $title = "Eartips";
+        $slug = "section-eartips";
+
+        return $this->productsView($title, $slug);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -41,50 +110,7 @@ class ProductsDetailController extends Controller
      */
     public function store(StoreProducts_detailRequest $request)
     {
-        // protected $fillable = [
-        //     'nama_produk',
-        //     'value',
-        //     'sound_quality',
-        //     'link',
-        //     'harga',
-        //     'exerpt',
-        //     'review',
-        //     'tipe_buds',
-        //     'bluetooth_codec',
-        //     'battery',
-        //     'sound_tuning',
-        //     'img'
-        // ];
-
-        $request->validate([
-            'nama_produk' => 'required',
-            'value' => 'required',
-            'sound_quality' => 'required',
-            'link' => 'required',
-            'harga' => 'required',
-            'exerpt' => 'required',
-            'review' => 'required',
-            'tipe_buds' => 'required',
-            'bluetooth_codec' => 'required',
-            'battery' => 'required',
-            'sound_tuning' => 'required',
-            'img' => 'required'
-        ]);
-
-        $create = new Products_detail();
-        $create->nama_produk =  $request->get('nama_produk');
-        $create->value = $request->get('value');
-        $create->sound_quality = $request->get('sound_quality');
-        $create->link = $request->get('link');
-        $create->harga = $request->get('harga');
-        $create->exerpt = $request->get('exerpt');
-        $create->review = $request->get('review');
-        $create->tipe_buds = $request->get('tipe_buds');
-        $create->bluetooth_codec = $request->get('bluetooth_codec');
-        $create->battery = $request->get('battery');
-        $create->sound_tuning = $request->get('harga');
-        $create->img = $request->get('img');
-        $create->save();
+        //
     }
 
     /**
@@ -129,7 +155,7 @@ class ProductsDetailController extends Controller
      */
     public function destroy(Products_detail $products_detail)
     {
-        //
+
     }
 
     public function getByitemID($itemID) {

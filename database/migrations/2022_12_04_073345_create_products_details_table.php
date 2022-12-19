@@ -27,6 +27,7 @@ class CreateProductsDetailsTable extends Migration
             $table->string('battery');
             $table->string('sound_tuning')->nullable();
             $table->string('img');
+            $table->string('type');
             $table->timestamps();
         });
     }

@@ -12,11 +12,11 @@ class BaseController extends Controller
         return view('main', BasePage::findPage($title));
     }
 
-    public function audio($title = "kitab-audio") {
-        return view('kitabAudio', BasePage::findPage($title));
+    public function audio($title = "rekomen-audio") {
+        return view('rekomendasiAudio', BasePage::findPage($title));
     }
-    public function keyboard($title = "kitab-keyboard") {
-        return view('kitabKeyboard', BasePage::findPage($title));
+    public function keyboard($title = "rekomen-keyboard") {
+        return view('rekomendasiKeyboard', BasePage::findPage($title));
     }
     public function login($title = "login") {
         return view('login', BasePage::findPage($title));

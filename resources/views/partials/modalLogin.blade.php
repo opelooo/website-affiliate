@@ -6,22 +6,18 @@
 
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title">{{ $produk->nama_produk }}</h4>
+                <h4 class="modal-title" id="namaProduk"></h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
             <!-- Modal body -->
             <div class="modal-body">
                 <p>Detail review</p>
-                <p id="review"></p>
+                <p id="review">  </p>
                 <p>
                     Value to money: <span id="valueModal"></span><br>
                     Sound quality: <span id="soundQModal"></span><br>
                     Harga: Rp<span id="hargaModal"></span><br>
-                    Tipe buds: <span id="budsModal"></span><br>
-                    Bluetooth codec: <span id="codecModal"></span><br>
-                    Daya tahan baterai: <span id="bateraiModal"></span><br>
-                    Sound tuning: <span id="tuningModal"></span><br>
                 </p>
             </div>
 

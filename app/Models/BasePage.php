@@ -6,26 +6,25 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class BasePage {
 
-    private static $nama = "Fernanda Gunsan";
     private static $pages_data = [
         [
-            "name" => "Fernanda Gunsan",
+            "name" => "Affiliate",
             "title" => "Home",
             "slug" => "home"
         ],
         [
-            "name" => "Fernanda Gunsan",
-            "title" => "Kitab Audio",
-            "slug" => "kitab-audio"
+            "name" => "Affiliate",
+            "title" => "Rekomendasi Audio",
+            "slug" => "rekomen-audio"
         ],
         [
-            "name" => "Fernanda Gunsan",
-            "title" => "Kitab Keyboard",
-            "slug" => "kitab-keyboard"
+            "name" => "Affiliate",
+            "title" => "Rekomendasi Keyboard",
+            "slug" => "rekomen-keyboard"
         ],
         [
-            "name" => "Fernanda Gunsan",
-            "title" => "Gunsan's Only Page",
+            "name" => "Affiliate",
+            "title" => "Admin",
             "slug" => "login"
         ]
     ];

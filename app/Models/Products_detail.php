@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Products_detail extends Model
 {
     use HasFactory;
+    const EXCERPT_LENGTH = 100;
 
     // protected $fillable = [
     //     'nama_produk',
@@ -24,4 +26,9 @@ class Products_detail extends Model
     //     'img'
     // ];
     protected $guarded = ['id'];
+    public function excerpt()
+    {
+        return Str::limit(strip_tags($this->review), Products_detail::EXCERPT_LENGTH);
+    }
 }
+

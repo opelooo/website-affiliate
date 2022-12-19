@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class CardDBSeeder extends Seeder
+class AkunAdminSeeder extends Seeder
 {
     /**
      * Run the database seeds.

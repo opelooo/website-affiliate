@@ -2,8 +2,9 @@
 
 use App\Http\Controllers\BaseController;
 use App\Http\Controllers\ProductsDetailController;
-use App\Models\BasePage;
-use PhpParser\Node\Expr\Assign;
+use App\Http\Controllers\AkunAdminController;
+use App\Http\Controllers\DashboardProductsDetailController;
+use App\Models\Products_detail;
 use Illuminate\Support\Facades\Route;
 
 
@@ -20,9 +21,29 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [BaseController::class, 'index']);
 
-Route::get('/kitabAudio', [ProductsDetailController::class, 'index']);
+Route::get('/rekomen-audio', [ProductsDetailController::class, 'index']);
 
-Route::get('/kitabKeyboard', [BaseController::class, 'keyboard']);
+Route::get('/section-tws', [ProductsDetailController::class, 'tws']);
+Route::get('/section-headset', [ProductsDetailController::class, 'headset']);
+Route::get('/section-speaker', [ProductsDetailController::class, 'speaker']);
+Route::get('/section-headphone', [ProductsDetailController::class, 'headphone']);
+Route::get('/section-soundcard', [ProductsDetailController::class, 'soundcard']);
+Route::get('/section-kable', [ProductsDetailController::class, 'kable']);
+Route::get('/section-iem', [ProductsDetailController::class, 'iem']);
+Route::get('/section-dac', [ProductsDetailController::class, 'dac']);
+Route::get('/section-mic', [ProductsDetailController::class, 'mic']);
+Route::get('/section-eartips', [ProductsDetailController::class, 'eartips']);
 
-Route::get('/login', [BaseController::class, 'login']);
+Route::get('/rekomen-keyboard', [BaseController::class, 'keyboard']);
+
+Route::get('/login', [AkunAdminController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [AkunAdminController::class, 'autenticate']);
+Route::post('/logout', [AkunAdminController::class, 'logout'])->middleware('auth');
+
+Route::get('/dashboard', function () {
+    return view('admin.index');
+})->middleware('auth');
+
+Route::get('/dashboard/items/checkExcerpt', [DashboardProductsDetailController::class, 'checkExcerpt']);
+Route::resource('/dashboard/items', DashboardProductsDetailController::class)->middleware('auth');
 

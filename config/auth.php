@@ -62,8 +62,12 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => App\Models\Akun_admin::class,
         ],
+        'admin' => [
+            'driver' => 'database',
+            'model' => App\Models\Akun_admin::class,
+        ]
 
         // 'users' => [
         //     'driver' => 'database',
